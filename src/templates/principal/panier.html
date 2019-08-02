@@ -1,0 +1,47 @@
+{% extends "base1.html" %}
+{% block content %}
+{% include "principal/header.html" %}
+<div class="col-md-8" id="internation" style="  height: 700px;">
+<br>
+<br>
+{% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+ {% endif %}
+<table  class="table table-bordered"  id="myTable">
+<thead>
+<th>
+Match
+</th>
+<th>
+Paris
+</th>
+<th class="cotetatal">
+cote
+</th>
+<th>
+retirer
+</th>
+</thead>
+<tbody>
+</tbody>
+</table>
+<form action="." method="POST">{% csrf_token %}
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control"  value="{{ coteTotal }}" disabled >
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" name="mise" placeholder="Votre Mise">
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-primary">valider</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+{% include "principal/footer.html" %}
+{% endblock %}

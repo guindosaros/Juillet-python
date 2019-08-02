@@ -1,0 +1,241 @@
+body
+{
+    font-family: 'Lato', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+#section-haut
+{
+    background-image: url("https://static.azimo.com/public/images/business-strip-background@2x.webp");
+    background-size: cover;
+}
+.page-header
+{
+    background: #103856;
+    margin: 0px;
+    border-bottom: solid 2px white;
+    color: #fff;
+}
+.page-header h2
+{
+    
+    padding-bottom: 0px;
+    padding-top: 10px;
+    position: relative;
+    right: 70px;
+
+}
+.button
+{
+   
+    padding-top: 25px;
+    border-radius: 5px;
+    position: relative;
+    right: 70px;
+}
+.btn1
+{
+    border-radius: 10px;
+    background-color: #1fd3c6;
+    color:#fff !important;
+    border-color:#fff !important;
+}
+
+.btn1:hover
+{
+    background-color: #fff  ;
+    color:#1fd3c6!important;
+    border-color: #1fd3c6 !important;
+  
+}
+
+.titre h1
+{
+        font-family: "Noto Sans",sans-serif;
+        font-size: 65px;
+        font-stretch: normal;
+        font-style: normal;
+        text-align: center;
+        padding-top: 30px;
+        color: #fff;
+        
+}
+
+#carousel
+{
+    background: #103856
+}
+#carousel h1,h4
+{
+   text-align: center;
+   color:#fff;
+}
+#nous{
+    background: #fff;
+    padding-top: 100px;
+}
+#nous h4 {
+    padding: 0 50px;
+}
+
+#service{
+    background: #f2f5f7;
+    padding-top: 90px;
+}
+section .heading 
+{
+    text-align: center;
+    color: #033564;
+    position: relative;  
+    bottom: 80px; 
+    text-transform: uppercase;     
+}
+#service strong
+{
+   text-align: center;
+   color: #033564;
+   font-size: 28px;
+}
+
+#service .small
+{
+    font-size: 17px;
+    padding-top: 10px;
+}
+/* Carousel */
+.carousel-inner{
+    width:100%;
+    height:200px;
+
+    }
+.carousel-inner img {
+    width: 100%; 
+    margin: auto;
+}
+@media (max-width: 600px) {
+     .carousel-caption {
+      display: none; 
+    }
+  }
+
+  .circle
+  {
+      height: 150px;
+  }
+  /* contacter*/
+ #Contacter
+{
+    font-family: 'Lato', sans-serif;
+
+    background: #103856;
+    
+    
+}
+.nous {
+    margin: 0 50px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom:150px;
+}
+
+.titre-contacter {
+    color: #ff3366;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.sous-titre {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+}
+.button-env
+{ 
+   margin-top: 20px;
+   margin-bottom: 20px;
+   color: #ffffff !important;
+   background-color: #3f0c19 !important;
+   border-color: #3f0c19 !important;
+   position: relative;
+   border-radius: 10px;
+   width: 250px;
+}
+.button-env:hover
+{ 
+    color: #ffffff !important;
+    background-color: #310611 !important;
+    border-color: #310611  !important;
+
+}
+.Cont-Form .form-control1
+{
+    height: 50px;
+    font-size: 15px;
+}
+.Cont-Form label
+{
+    color: #fff;
+    font-size: 15px;
+}
+/*  */
+/* SUIVRE */
+#suivre
+{
+    padding: 60px 0;
+    text-align: center;
+}
+#suivre h3
+{
+    width: 400px;
+    text-transform: uppercase;
+    margin: 0 auto 20px auto;
+    border-bottom:  1px solid #02b8dd;
+    padding-bottom: 20px;   
+}
+#suivre h5
+{
+   font-size: 18px;   
+}
+.midlle
+{
+    position: relative; 
+    bottom: 00px;
+}
+#suivre .btn img
+{
+    font-size: 30px;
+    padding-top: 15px;
+}
+#suivre .btn i
+{
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+#suivre .btn
+{
+    width: 75px;
+    height: 75px;
+    background: #f0f1f1;
+    border-radius: 30px;
+    box-shadow: #00000070;
+}
+#suivre .btn:hover
+{
+    background: #02b8dd;
+    color: #efefef;
+}
+/*footer*/
+footer
+{
+    height: 100px;
+    background-color: #444;
+}
+footer p
+{
+    color:#fff;
+    text-align: center;
+    padding-top: 40px;
+}

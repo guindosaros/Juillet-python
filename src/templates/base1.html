@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900" rel="stylesheet">
+    {% load static %}
+   <link rel="stylesheet" href="{% static 'css/principal.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <title> </title>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.add_to_cart').on('click', function(){
+            idmatch = $(this).attr('data-id')
+            match = $(this).attr('data-equi')
+            paris = $(this).attr('data-choix')
+            coteequip = $(this).attr('data-cote')
+            data = {
+                idmatch: idmatch,
+                match: match,
+                paris:paris,
+                coteequip:coteequip
+            }
+          $.ajax({
+                type: 'GET',
+                url: '{% url "cart_create" %}',
+                data: data,
+                success: function(data){
+                    console.log(data)
+                }
+            })
+        })
+    });
+</script>
+  
+<body>
+ {% block content %}
+ 
+ {% endblock %}  
+{% block extrajs %}
+{% load static %}
+<script type="text/javascript" src="{% static 'js/app.js' %}"></script> 
+{% endblock %}   
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base1.html" %}
+{% block content %}
+{% include "principal/header.html" %}
+<div class="col-md-8" id="internation" style="  height: 700px;" >
+<form id="form-retrait" class="form"  enctype="multipart/form-data" style=" margin-left: 200px;font-size: 15px;background:#534c62;color:#fff;padding:
+ 40px;margin-top: 50px;border-radius: 10px;width: 500px;" action="." role="form" method="POST" >{% csrf_token %}
+<h5 class="infos">Effectuer un Retrait de votre compte Momobet vers Votre Mobile Money frais 1%</h5>
+ {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                 {% endif %}
+                            <div class="form-group">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                                    <label for="exampleFormControlSelect">Operateur Mobile</label>
+                                    <select class="form-control form-control-sm" name="operateur" placeholder="Montant à Retirer">
+                                            <option>Orange Money</option>
+                                            <option>Mtn Money</option>
+                                            <option>Flooz Money</option>
+                                    </select>
+                                </div>
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                             <div class="form-group">
+        
+                                        <label for="exampleFormControlInput1">Numero de Telephone</label>
+                                        <input type="montant" class="form-control"  name="numero" id="exampleFormControlInput1" placeholder="Numero de telephone">
+                            </div>
+                          <small id="emailHelp" class="form-text text-muted"></small>
+                          <div class="form-group">
+    
+                                <label for="exampleFormControlInput1">Montant a Retirer</label>
+                                <input type="number" class="form-control" name="montant" id="exampleFormControlInput1" placeholder="Montant a retirer">
+                          </div>
+                          <button class="btn btn-outline-success" type="submit">Valider</button>
+                    </form>
+            </div>
+          </div>
+          </div>
+
+{% include "principal/footer.html" %}
+{% endblock %}

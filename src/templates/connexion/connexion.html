@@ -1,0 +1,65 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-header">  
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4">
+						   <h1>MOMO-<span class="small">BET</span></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+          {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+            {% endif %}
+            <h5 class="card-title text-center">Connexion </h5>
+            <form class="form-signin" action="." method="POST" >{% csrf_token %}
+            <small id="emailHelp" class="form-text"></small>
+              <div class="form-label-group">   
+                 <label for="inputEmail">Adresse E-mail</label>
+                <input type="email" id="inputEmail" class="form-control" name="username"  placeholder="Email address" autofocus>
+                
+              </div>
+              <small id="emailHelp" class="form-text"></small>
+              <div class="form-label-group">
+                <label for="inputPassword">Mots De passe</label>
+                <input type="password" id="inputPassword" class="form-control" name="password"  placeholder="mots de passe">
+                
+              </div>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">se souvenir de moi </label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"> Connexion </button>
+              <hr class="my-4">
+			  <div class="d-flex justify-content-center links compte">
+                 <p class="small">Vous n'avez pas de compte ? <a  href="{% url 'sigin' %}">S'inscrire maintenant !</a></p>
+				</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+	<p>© Copyright 2019 - 2022 Web-transfert  Inc - All Rights Reserved</p>
+</footer>
+{% endblock content %} 
+
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% comment %} {% block content %}
+    {% for items in user %}
+    
+     {{ items.email }}-{{ items.password }}
+      
+    {% endfor %}
+
+{% endblock content %} {% endcomment %}

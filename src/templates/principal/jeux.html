@@ -1,0 +1,74 @@
+{% extends "base1.html" %}
+{% block content %}
+{% include "principal/header.html" %}
+<div class="col-md-8" id="internation" style="  height: 700px;">
+<br>
+   <p style="font-size:14px;display:inline-block;border-style: solid;padding:20px">
+          Comment parié sur betmomo ? Selectionner Votre Equipe Vous pouver Faire un tickets Combiné Avec plusieur Equipe , Les options de paris chaque option est representé par une Côte <br>
+          V1 : Représente la Victoire de L'equipe à l'Domicile <br>
+          X : Un match Null <br>
+          V2: Victoire de l'equipe à l' Exterieur <br> 
+     </p>
+    <br>
+    <div class="card mb-5" style=" width: 1000px;">
+            <div class="card-header">Liste des Paris de {{Categorie}} Disponible Actuellement Sur Momobet</div>
+            <div class="card-block p-0">
+  <table class="table table-dark" style=" width: 1000px;">
+  <thead>
+    <tr style=" width: 900px;">
+      <th scope="col">Date </th>
+      <th scope="col"style="text-align:center">Heure</th>
+      <th scope="col" style="text-align:center">Match</th>
+      <th scope="col" style="text-align:center">V1</th>
+      <th scope="col" style="text-align:center">X</th>
+      <th scope="col" style="text-align:center">V2</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for items in liste %}
+    <tr>
+      <td scope="row">{{items.date|date:"j-F-Y"}}</td>
+      <td style="text-align:center">{{items.heure|date:"G-i"}}</td>
+      <td style="text-align:center">{{items.equipe_1|capfirst}} VS {{items.equipe_2|capfirst}}</td>
+      <td style="text-align:center"><button type="button" data-id="{{ items.id }}" data-equi="{{items.equipe_1}} VS {{items.equipe_2}}" data-choix="V1" data-cote="{{items.v1}}"   class="btn btn-light add_to_cart">{{items.v1}}</button></td>
+      <td style="text-align:center"><button type="button" data-id="{{ items.id }}" data-equi="{{items.equipe_1}} VS {{items.equipe_2}}" data-choix="X" data-cote="{{items.x}}"   class="btn btn-light add_to_cart">{{items.x}}</button></td>
+      <td style="text-align:center"><button type="button" data-id="{{ items.id }}" data-equi="{{items.equipe_1}} VS {{items.equipe_2}}" data-choix="V2" data-cote="{{items.v2}}"   class="btn btn-light add_to_cart">{{items.v2}}</button>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+ </div>
+<div class="card-footer p-0">
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-end mt-3 mr-3">
+                     {% if liste.has_previous %}
+                        <li class="page-item">
+                           <a class="page-link" href="?page={{ liste.previous_page_number }}">Precedent</a>
+                        </li>
+                         {% endif %}
+                        <li class="page-item">
+                          {% for pg in liste.paginator.page_range %}
+                          {% if liste.number == pg %}
+                            <a href="?page={{pg}}" class="btn btn-info  active">{{pg}}</a>
+                          {% else %}
+                            <a href="?page={{pg}}" class="btn btn-info">{{pg}}</a>
+                          {% endif %}
+                          {% endfor %}
+                        </li>
+                         {% if liste.has_next %}
+                        <li class="page-item">
+                             <a class="page-link" href="?page={{ liste.next_page_number }}">Suivant</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>                                                                                                                 			</div>
+      </div>
+      </div>
+       </div>
+          </div>
+          </div>
+{% include "principal/footer.html" %}
+{% endblock %}

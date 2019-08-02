@@ -1,0 +1,116 @@
+{% load static %}
+{% block content %}
+
+    <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900" rel="stylesheet">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/inscri.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	
+    <title></title>
+    <style>
+          .etoile{
+              color : red !important;
+            }
+   </style>
+</head>
+<body>
+     <br>
+      <h4 style="text-align : center; text-transform :uppercase;"> Inscription a Momobet</h4>
+     <br>
+     <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Formulaire d'inscription</h2>
+                        <p style="color : white" >Inscrivez Vous a Momobet Pour Acceder a Notre site paris en ligne et Recevez de Nombreux Avantages  avec Plein de Bonus Momobet Meilleur Sixte paris Ivoirienne </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}<a href="{% url 'login' %}" class="alert-link"> Cliquez ici pour connecter</a>. </div>
+                    {% endfor %}
+                {% endif %}
+                <h4 style="color: red; font-size: 15px"></h4>
+                <form action="." method="POST" name="inscri">{% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                        <label for="Full Name">Nom  <span class="etoile"> *</span> </label>
+                          <input id="Full Name" name="Nom" placeholder="Nom" class="form-control" type="text" value={{ nomut }}>
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">Prenoms <span class="etoile"> *</span> </label>
+                          <input type="text" class="form-control" name="Prenoms" id="inputEmail4" placeholder="Prenoms">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">Date de Naissance <span class="etoile"> *</span> </label>
+                          <input type="date" class="form-control" name="Naissance" id="inputEmail4" placeholder="Date de Naissance">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-4">
+                        <label for="Full Name">sexe<span class="etoile"> *</span></label>
+                          <input id="Full Name" name="sexe" placeholder="sexe" class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">E-mail<span class="etoile"> * </span> </label>
+                          <input type="mail" class="form-control" name="mail" id="inputEmail4" placeholder="Votre Adresse Mail">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">Pseudo<span class="etoile"> * </span> </label>
+                          <input type="text" class="form-control" name="Pseudo" id="inputEmail4" placeholder="Votre Pseudo">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-4">
+                        <label for="Full Name">Ville<span class="etoile"> *</span></label>
+                          <input id="Full Name" name="Ville" placeholder="Ville" class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">Numero<span class="etoile"> * </span> </label>
+                          <input type="text" class="form-control" name="Numero" id="inputEmail4" placeholder="Numero de telephone">
+                        </div>
+                        <div class="form-group col-md-4">
+                        <label for="inputEmail4">Pays<span class="etoile"> * </span> </label>
+                          <input type="text" class="form-control" name="pays" id="inputEmail4" placeholder="pays">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                        
+                        <label for="inputEmail4">Mots de passe <span class="etoile"> * </span> </label>
+                          <input type="password" class="form-control" name="password" id="inputEmail4" placeholder="mot de pass">
+                          <p class="text-danger">{{ error }}</p>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="inputEmail4">confirmer de passe<span class="etoile"> * </span> </label>
+                          <input type="password" class="form-control" name="password2" id="inputEmail4" placeholder="confirmation">
+                          <p class="text-danger">{{ error }}</p>
+                        </div>
+                      </div>
+                    
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+           </div>
+           </div>
+</body>
+</html>
+{% endblock %}

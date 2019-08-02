@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 0px;">
+                <a class="navbar-brand" href="#">Momobet</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      
+                    </li>
+                    <li class="nav-item">
+                      
+                    </li>
+                    <li class="nav-item dropdown">
+                      
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                      </div>
+                    </li>
+                    </li>
+                </ul>
+                     <label class="label" style="margin-right: 30px;"> Bienvenue:  {{ pseudo }}   Votre solde est de : <span style="color:red"> {{ solde }} CFA </span> </label>
+                   <label class="label" style="margin-right: 60px;"> <a href="{% url 'panier' %}"  class="nav-link waves-effect">
+                    <span class="badge red z-depth-1 mr-1">0</span>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="clearfix d-none d-sm-inline-block"> Mes equipes </span>
+                    </a>
+                    </label>
+                     <a href="{% url 'logout' %}" ><button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-sign-out-alt"></i></button></a>
+
+                </div>
+              </nav>
+         <div class="container-fluid">
+          <div class="row">
+              <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Menu Principal</p> </h3>
+            <strong>SC</strong>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="{% url 'principal' %}">
+                    <i class="fas fa-home"></i>
+                   Tableau de Bord 
+                </a>
+            </li>
+             <li>
+                <a href="#Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                     <i class="fas fa-futbol"></i>
+                    Jeux
+                </a>
+                <ul class="collapse list-unstyled" id="Submenu">
+                    <li>
+                        <a href={% url 'jeux' idcat=1 %}>
+                         <i class="fas fa-futbol"></i>
+                        Football</a>
+                        
+                    </li>
+                    <li>
+                        <a href={% url 'jeux' idcat=2 %}>
+                        <i class="fas fa-basketball-ball"></i> Basket</a>
+                    </li>
+                    <li>
+                        <a href={% url 'jeux' idcat=3 %}>
+                        <i class="fas fa-hockey-puck"></i>
+                        Hockey</a>
+                    </li>
+                </ul>
+            </li>
+             <li>
+                <a href="principal">
+                    <i class="fas fa-home"></i>
+                    Mes paris
+                </a>
+            </li>
+            <li>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-wallet"></i>
+                    Transaction
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="{% url 'depot' %}">
+                         <i class="fas fa-coins"></i>
+                        Depôt</a>
+                        
+                    </li>
+                    <li>
+                        <a href={% url 'retrait' %}><i class="fas fa-arrow-down"></i>Rétrait</a>
+                    </li>
+                    <li>
+                        <a href={% url 'transac' %}><i class="fas fa-clipboard-list"></i>
+                        Historique</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="rendez">
+                <i class="fas fa-user-circle"></i>Mon compte</a>
+            </li>
+            <li>
+                <a href="paramètre">
+                <i class="far fa-calendar-alt"></i>paramètre</a>
+            </li>
+        </ul>
+    </nav>
+  

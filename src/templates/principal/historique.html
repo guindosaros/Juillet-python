@@ -1,0 +1,73 @@
+{% extends "base1.html" %}
+{% block content %}
+{% include "principal/header.html" %}
+
+<div class="col-md-8" id="internation" style="  height: 700px;">
+<br>
+      <h4 stye="text-transform:uppercase">HISTORIQUE DES TRANSACTIONS EFFECTUER SUR MOMOBET </h4>
+<br>
+      <h4> </h4>
+    <br>
+    <div class="card mb-5" style=" width: 900px;">
+            <div class="card-header">L'historique de Vos Transactions Sur votre compte Momobet</div>
+            <div class="card-block p-0">
+            <table class="table table-bordered table-sm m-0" style=" width: 900px;">
+  <thead>
+    <tr style=" width: 900px; background-color: #f1f1f1;">
+      <th scope="col">Date Transaction</th>
+      <th scope="col">Heure Transaction</th>
+      <th scope="col">Type de Transaction</th>
+      <th scope="col">Montant</th>
+      <th scope="col">Operateur</th>
+      <th scope="col">Numero Utilisé</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for histori in histo %}
+    <tr>
+      <td scope="row">{{histori.date|date:"j-F-Y"}}</td>
+      <td >{{histori.date|date:"G-i-s"}}</td>
+      {% if histori.Transaction == "Retrait" %}
+      <td style="color:red">{{histori.Transaction}}</td>
+      <td style="color:red">{{histori.Montant}}</td>
+      {% else %}
+      <td style="color:green">{{histori.Transaction}}</td>
+      <td style="color:green">{{histori.Montant}}</td>
+       {% endif %}
+      <td>{{histori.operateur}}</td>
+      <td>{{histori.numero}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+ </div>
+            <div class="card-footer p-0">
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-end mt-3 mr-3">
+                        <li class="page-item disabled">
+                            <span class="page-link">Previous</span>
+                        </li>
+                        <li class="page-item active" ><a class="page-link" href="#">1</a></li>
+                        <li class="page-item">
+                            <span class="page-link">2<span class="sr-only">(current)</span>
+                            </span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+       </div>
+          </div>
+          </div>
+<script type="text/javascript">
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+{% include "principal/footer.html" %}
+{% endblock %}
