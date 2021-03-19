@@ -22,7 +22,7 @@ django-treebeard==4.3
 djangocms-admin-style==1.4.0
 djangocms-cascade==0.19
 djangocms-text-ckeditor==3.8.0
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 easy-thumbnails==2.6
 html5lib==1.0.1
 jsonfield==2.0.2
