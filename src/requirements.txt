@@ -1,4 +1,4 @@
-Django==2.2.4
+Django==2.2.18
 django-admin-sortable2==0.7.2
 django-angular==2.2
 django-appconf==1.0.3
