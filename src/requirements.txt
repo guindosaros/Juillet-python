@@ -3,7 +3,7 @@ django-admin-sortable2==0.7.2
 django-angular==2.2
 django-appconf==1.0.3
 django-classy-tags==0.9.0
-django-cms==3.5.3
+django-cms==3.5.4
 django-filer==1.5.0
 django-formtools==2.1
 django-fsm==2.6.1
